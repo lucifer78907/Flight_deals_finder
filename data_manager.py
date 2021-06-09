@@ -8,4 +8,5 @@ class DataManager:
 
     def get_data(self):
         self.my_data=self.response.json()
+        self.my_data=self.my_data['prices']
         return self.my_data
