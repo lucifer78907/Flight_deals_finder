@@ -1,3 +1,5 @@
 class FlightSearch:
-    #This class is responsible for talking to the Flight Search API.
-    pass
+
+    def flight_data(self,city):
+        self.code="TESTING"
+        return self.code
