@@ -10,3 +10,7 @@ class DataManager:
         self.my_data=self.response.json()
         self.my_data=self.my_data['prices']
         return self.my_data
+
+    def update_iata_code(self,element,ele_id):
+        update_response=requests.put(url=f"https://api.sheety.co/f51728668cc6d9f9988bb2e676485cd7/myFlightDeals/prices/{ele_id}",json=element)
+        print(update_response.status_code)

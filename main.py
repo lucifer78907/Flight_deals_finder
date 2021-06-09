@@ -10,5 +10,11 @@ for elements in sheet_data:
         f_search=FlightSearch()
         city_code=f_search.flight_data(elements['city'])
         elements['iataCode']=city_code
+        ele_dict={
+            "price":{
+                "iataCode":elements['iataCode']
+            }
+        }
+        ele_id=elements['id']
+        data.update_iata_code(ele_dict,ele_id)
 
-pprint(sheet_data)
