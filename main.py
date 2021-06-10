@@ -1,5 +1,6 @@
 from data_manager import DataManager
 from flight_data import FlightData
+from notification_manager import NotificationManager
 data = DataManager()
 sheet_data = data.get_data()
 my_flight_data=FlightData()
@@ -22,3 +23,7 @@ for elements in sheet_data:
 
 for elements in sheet_data:
         my_flight_data.print_data(elements['iataCode'])
+        lowest_price=my_flight_data.return_price(elements['iataCode'])
+        if elements['lowestPrice']>lowest_price:
+            notify_me = NotificationManager()
+            notify_me.send_message(lowest_price,"London-LON",elements['city'],elements['iataCode'])
