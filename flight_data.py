@@ -32,3 +32,6 @@ class FlightData:
         data=response.json()
         new_data=data['data'][0]
         print(city,f" ${new_data['price']}")
+        temp=new_data['utc_departure'].split('T')
+        self.departure_date=temp[0]
+        print(self.departure_date)
