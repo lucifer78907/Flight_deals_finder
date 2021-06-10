@@ -23,7 +23,8 @@ for elements in sheet_data:
 
 for elements in sheet_data:
         my_flight_data.print_data(elements['iataCode'])
+        departue_date=my_flight_data.return_departure_date(elements['iataCode'])
         lowest_price=my_flight_data.return_price(elements['iataCode'])
         if elements['lowestPrice']>lowest_price:
             notify_me = NotificationManager()
-            notify_me.send_message(lowest_price,"London-LON",elements['city'],elements['iataCode'])
+            notify_me.send_message(lowest_price,"London-LON",elements['city'],elements['iataCode'],departue_date)
