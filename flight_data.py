@@ -49,4 +49,18 @@ class FlightData:
         new_data = data['data'][0]
         return new_data['price']
 
-    
+    def return_departure_date(self,city):
+        self.user_param = {
+            "fly_from": self.departure_airport_code,
+            "fly_to": city,
+            "date_from": self.from_date,
+            "date_to": self.to_date,
+            "curr": "USD"
+        }
+        response = requests.get(url=API_ENDPOINT_URL, params=self.user_param, headers=header_param)
+        data = response.json()
+        new_data = data['data'][0]
+        print(city, f" ${new_data['price']}")
+        temp = new_data['utc_departure'].split('T')
+        self.departure_date = temp[0]
+        return self.departure_date
