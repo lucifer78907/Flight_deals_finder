@@ -14,8 +14,8 @@ class NotificationManager:
             .create(
             body=f"Low price Alert only ${price} \n from {city_from} to "
                  f"{city_to}-{city_to_iata}\n on {dp_date}",
-            from_='+18563475338',
-            to='+918171768882'
+            from_='',
+            to=''
         )
 
         print(message.status)
