@@ -2,9 +2,9 @@ import requests
 from twilio.rest import Client
 # "lon": 77.6833,
 # "lat": 29.4667,
-account_sid = "AC682f47acde6b0e9200f2e76c183bae7d"
-auth_token = "e730072a6ffdfd2fcd67bbc0c689084a"
-api_key = "181416a906abc3d9beb7fdcf721e9962"
+account_sid = "
+auth_token = "
+api_key = "
 
 parameters = {
     "lon": 76.861732,
